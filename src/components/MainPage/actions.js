@@ -15,7 +15,7 @@ export const usersFetchAction = () => (dispatch) => {
 
   getUsers(10)
   .then(data => dispatch(successUsersFetchActionType(data.items)))
-  .then(()=>dispatch(stopUsersFetchActionType()));
+  .then(()=>setTimeout(()=>dispatch(stopUsersFetchActionType()), 2000));
 
 
 }
