@@ -11,6 +11,7 @@ class MainPage extends Component {
     setUsers();
   }
   render() {
+
     let { users, isLoading } = this.props;
     const renderUsers = users.map(item =>
       <User key={item.id}

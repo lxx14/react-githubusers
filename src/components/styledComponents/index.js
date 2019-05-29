@@ -53,4 +53,6 @@ width: 150px;
 height: 150px;
 margin: 0 10px 0 0;
 `
-
+export const Icon = styled.i`
+margin: 0 0 0 10px;
+`
