@@ -1,17 +1,19 @@
 import React from 'react';
-import { UserContainer } from '../styledComponents';
+import { UserContainer, Link, Image } from '../styledComponents';
 
 const User = (props) => {
   return (
     <UserContainer>
-      <img src={props.avatar_url} />
+      <Image src={props.avatar_url} />
       <div>
+      <UserContainer nameContainer>
         <p>{props.name ? props.name : 'Incognito'}</p>
-        <a href={props.html_url} target='blank'>{props.login}</a>
-        {props.bio ? <p>{props.bio}</p> : <p>there could be his bio... But it's ampty ;)</p>}
-        {props.location ? <p>{props.location}</p> : <p>From no one knows :)</p>}
+        <Link href={props.html_url} target='blank'>{props.login}</Link>
+        </ UserContainer>
+        {props.bio ? <h3>{props.bio}</h3> : <h3>there could be his bio... But it's ampty ;)</h3>}
+        {props.location ? <p><i className="fas fa-map-marker-alt"></i> {props.location}</p> : <p><i className="fas fa-map-marker-alt"></i> From no one knows :)</p>}
       </div>
-    </UserContainer>
+    </ UserContainer>
   )
 }
 export default User;

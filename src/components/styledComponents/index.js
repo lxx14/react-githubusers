@@ -35,13 +35,22 @@ export const Hands = styled.i`
 
 export const UserContainer = styled.div`
 display: flex;
-box-shadow: 0 0 5px 0 black;
-width: 90%;
-margin: 20px 10px;
+box-shadow: ${props => props.nameContainer ? "none" : "0 0 5px 0 black" };
+width: ${props => props.nameContainer ? "100%" : "90%" };
+margin: ${props => props.nameContainer ? "0px" : "20px 10px" };
+padding: ${props => props.nameContainer ? "10px 0 0 0" : "0" };
 `
 
 export const Link = styled.a`
 text-decoration: none;
 color: blue;
-
+margin: 0 0 0 10px;
+cursor: pointer;
 `
+
+export const Image = styled.img`
+width: 150px;
+height: 150px;
+margin: 0 10px 0 0;
+`
+
