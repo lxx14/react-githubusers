@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Footer } from './src/components/Footer';
 import { Header } from './src/components/Header';
-
+import MainPage from './src/components/MainPage';
 import './App.scss';
 
 
@@ -12,7 +12,7 @@ class App extends Component {
     return (
       <div>
         <Header />
-        <h2>App</h2>
+        <MainPage />
         <Footer />
       </div>
     );
