@@ -3,6 +3,7 @@ import styled from 'styled-components';
 export const Container = styled.div`
 position: relative;
 display: flex;
+flex-direction: column;
 width: 100%;
 min-height: ${props => props.mainContainer ? "300px" : "" };
 background-color: ${props => props.footerContainer ? "black" : props.headerContainer ? "yellow" : "white" };

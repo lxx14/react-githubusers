@@ -14,8 +14,12 @@ export const usersFetchAction = () => (dispatch) => {
   dispatch(startUsersFetchActionType());
 
   getUsers(10)
-  .then(data => dispatch(successUsersFetchActionType(data.items)))
-  .then(()=>setTimeout(()=>dispatch(stopUsersFetchActionType()), 2000));
-
-
+    .then(result => {
+      return Promise.all(
+        result.items.map(user => fetch(`https://api.github.com/users/${user.login}`).then(result => result.json()))
+      ).then(data => {
+        dispatch(successUsersFetchActionType(data));
+      });
+    })
+    .then(() => setTimeout(() => dispatch(stopUsersFetchActionType()), 1000));
 }
