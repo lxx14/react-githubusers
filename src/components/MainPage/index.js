@@ -10,8 +10,7 @@ class MainPage extends Component {
     setUsers();
   }
   render() {
-    let { users } = this.props;
-    console.log(users);
+    let { users, isLoading } = this.props;
     const renderUsers = users.map(item => <div key={item.id}>
       <img src={item.avatar_url} />
       <p>{item.name}</p>
@@ -21,7 +20,7 @@ class MainPage extends Component {
     </div>)
     return (
       <Container mainContainer>
-        {this.props.isLoading && <Loading><p><i className="fas fa-american-sign-language-interpreting"></i></p></Loading>}
+        {isLoading && <Loading><p><i className="fas fa-american-sign-language-interpreting"></i></p></Loading>}
         {renderUsers}
       </Container>
     )
