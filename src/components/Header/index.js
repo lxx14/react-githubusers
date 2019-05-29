@@ -1,12 +1,13 @@
 import React from 'react';
-import { Container, List, Link, Li } from '../styledComponents';
+import { NavLink } from 'react-router-dom';
+import { Container, List, Li } from '../styledComponents';
 
 export const Header = () => {
   return (
     <Container headerContainer>
       <List>
-        <Li><Link headerLink href='#'>Task</Link></Li>
-        <Li><Link headerLink href='#'>Users</Link></Li>
+        <Li><NavLink exact to='/'>Task</NavLink></Li>
+        <Li><NavLink to='/users'>Users</NavLink></Li>
       </List>
     </Container>
   )
