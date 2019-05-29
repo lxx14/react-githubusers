@@ -1,16 +1,10 @@
 import React from 'react';
-import styled from 'styled-components';
-import { ContainerFooter } from '../Footer';
-
-const ContainerHeader = styled(ContainerFooter)`
-background: yellow;
-color: black;
-`
+import { Container } from '../styledComponents';
 
 export const Header = () => {
   return (
-    <ContainerHeader>
+    <Container headerContainer>
       <h2>Header</h2>
-    </ContainerHeader>
+    </Container>
   )
 }

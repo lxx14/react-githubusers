@@ -1,17 +1,10 @@
 import React from 'react';
-import styled from 'styled-components';
-
-export const ContainerFooter = styled.div`
-background: black;
-padding: 20px 0;
-text-align: center;
-color: white;
-`
+import { Container } from '../styledComponents';
 
 export const Footer = () => {
   return (
-    <ContainerFooter>
+    <Container footerContainer>
       <h2>Footer</h2>
-    </ContainerFooter>
+    </Container>
   )
 }
