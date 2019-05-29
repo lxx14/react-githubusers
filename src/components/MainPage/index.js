@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { usersFetchAction } from './actions';
-import { Container, Loading } from '../styledComponents';
+import { Container, Loading, Hands } from '../styledComponents';
+import User from './User';
 
 
 class MainPage extends Component {
@@ -11,16 +12,18 @@ class MainPage extends Component {
   }
   render() {
     let { users, isLoading } = this.props;
-    const renderUsers = users.map(item => <div key={item.id}>
-      <img src={item.avatar_url} />
-      <p>{item.name}</p>
-      <a href={item.html_url} target='blank'>{item.login}</a>
-      {item.bio ? <p>{item.bio}</p>:<p>there could be his bio... But it's ampty ;)</p>}
-      {item.location ? <p>{item.location}</p> : <p>From no one knows :)</p>}
-    </div>)
+    const renderUsers = users.map(item =>
+      <User key={item.id}
+        avatar_url={item.avatar_url}
+        name={item.name}
+        html_url={item.html_url}
+        bio={item.bio}
+        location={item.location}
+      />
+    )
     return (
       <Container mainContainer>
-        {isLoading && <Loading><p><i className="fas fa-american-sign-language-interpreting"></i></p></Loading>}
+        {isLoading && <Loading><p><Hands className="fas fa-american-sign-language-interpreting"></Hands></p></Loading>}
         {renderUsers}
       </Container>
     )
