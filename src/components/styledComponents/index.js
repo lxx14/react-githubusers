@@ -3,7 +3,7 @@ import styled, { keyframes } from 'styled-components';
 export const Container = styled.div`
 position: relative;
 display: flex;
-flex-direction: column;
+flex-wrap: wrap;
 width: 100%;
 min-height: ${props => props.mainContainer ? "300px" : "" };
 background-color: ${props => props.footerContainer ? "black" : props.headerContainer ? "yellow" : "white" };
@@ -31,4 +31,17 @@ export const Hands = styled.i`
   color: white;
   text-shadow: 0 0 7px black;
   animation: ${rotating} 1s linear infinite;
+`
+
+export const UserContainer = styled.div`
+display: flex;
+box-shadow: 0 0 5px 0 black;
+width: 90%;
+margin: 20px 10px;
+`
+
+export const Link = styled.a`
+text-decoration: none;
+color: blue;
+
 `

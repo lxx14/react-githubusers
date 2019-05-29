@@ -16,6 +16,7 @@ class MainPage extends Component {
       <User key={item.id}
         avatar_url={item.avatar_url}
         name={item.name}
+        login={item.login}
         html_url={item.html_url}
         bio={item.bio}
         location={item.location}
