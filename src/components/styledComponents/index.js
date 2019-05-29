@@ -7,7 +7,7 @@ flex-wrap: wrap;
 width: 100%;
 min-height: ${props => props.mainContainer ? "300px" : "" };
 background-color: ${props => props.footerContainer ? "black" : props.headerContainer ? "yellow" : "white" };
-justify-content: ${props => props.mainContainer ? "space-around" : "center" };
+justify-content: ${props => props.mainContainer ? "space-around" : "flex-start" };
 color: ${props => props.footerContainer ? "white" : "black" };
 `;
 
@@ -43,9 +43,10 @@ padding: ${props => props.nameContainer ? "10px 0 0 0" : "0" };
 
 export const Link = styled.a`
 text-decoration: none;
-color: blue;
+color: ${props => props.headerLink ? "black" : "blue" };
 margin: 0 0 0 10px;
 cursor: pointer;
+font-size: ${props => props.headerLink ? "20px" : "1em" };
 `
 
 export const Image = styled.img`
@@ -55,4 +56,16 @@ margin: 0 10px 0 0;
 `
 export const Icon = styled.i`
 margin: 0 0 0 10px;
+`
+
+export const List = styled.ul`
+list-style: none;
+margin: 0;
+padding: 0;
+display: flex
+`
+
+export const Li = styled.li`
+padding: 20px;
+cursor: pointer;
 `
