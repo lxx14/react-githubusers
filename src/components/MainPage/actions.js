@@ -14,9 +14,10 @@ export const usersFetchAction = () => (dispatch) => {
   dispatch(startUsersFetchActionType());
 
   getUsers(10)
-    .then(result => {
+    .then(response=>response.json())
+    .then(users => {
       return Promise.all(
-        result.items.map(user => fetch(`https://api.github.com/users/${user.login}`).then(result => result.json()))
+        users.items.map(user => fetch(`https://api.github.com/users/${user.login}`).then(result => result.json()))
       ).then(data => {
         dispatch(successUsersFetchActionType(data));
       });
