@@ -16,7 +16,7 @@ export const usersFetchAction = () => (dispatch) => {
   getUsers(10)
     .then(response=>{
       if (response.status !==200) {
-        throw new Error("Sorry, now server not responding...But our team is working with this little error ;) Please, refresh this page over 2 minutes")
+        throw new Error("Sorry, now server is not responding...But our team is working with this little error ;) Please, refresh this page over 2 minutes")
       }
       return response.json()
       })
